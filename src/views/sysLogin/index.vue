@@ -198,13 +198,6 @@ init()
 </script>
 
 <style lang="scss" scoped>
-@font-face {
-	font-family: chuangCuYuan;
-	//src: url("@/assets/font/创粗圆.ttf") format("truetype");
-	//src: url("@/assets/font/快乐积木体.ttf") format("truetype");
-	src: url("@/assets/font/浪潮立影体.ttf") format("truetype");
-}
-
 .login {
 	width: 100%;
 	height: 100%;
@@ -223,7 +216,6 @@ init()
 			height: 40px;
 			font-size: 40px;
 			margin-bottom: $margin-default;
-			font-family: chuangCuYuan;
 			//color: #4682b4;
 			@include flex(flex-start);
 			@include font-gradient(#b0c4de, #3479b2, -90deg);
