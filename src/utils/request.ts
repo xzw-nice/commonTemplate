@@ -111,7 +111,7 @@ const alovaInstance = createAlova({
 		onSuccess: async (response: Response, config: Method<any>) => {
 			if (response.status === 200) {
 				let data: any = null
-				if (config.config?.header.responseType === "blob") {
+				if (config.config?.header?.responseType === "blob") {
 					// 流文件处理，使用response.blob()拿数据（异步）
 					data = response
 				} else {
