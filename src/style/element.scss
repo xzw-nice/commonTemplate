@@ -1,0 +1,169 @@
+.el-button--small {
+	font-size: 0.75rem;
+}
+
+.el-popper {
+	// 侧边栏弹出框样式修改
+	.el-menu--popup-container {
+		.el-menu {
+			background-color: #303133;
+
+			.el-menu-item {
+				transition: all 0.2s;
+
+				> i {
+					font-size: 1.5rem !important;
+				}
+
+				.menu-name {
+					font-size: 14px;
+					color: #ffffff;
+				}
+
+				&:hover {
+					background-color: rgba(84, 143, 243, 0.3);
+				}
+			}
+		}
+	}
+}
+
+/** 表单样式 */
+.el-form {
+	.el-form-item {
+		.el-form-item__content {
+			.el-select,
+			.el-cascader,
+			.el-input,
+			.el-select {
+				width: 100%;
+			}
+		}
+	}
+}
+
+/** 行内表单统一样式 */
+.el-form--inline {
+	.el-form-item {
+		width: calc(50% - 12px);
+		align-items: center;
+
+		&:nth-child(odd) {
+			margin-right: 22px !important;
+		}
+
+		&:nth-child(even) {
+			margin-right: 0 !important;
+		}
+
+		.el-form-item__content {
+			.el-select,
+			.el-cascader,
+			.el-input,
+			.el-select,
+			.el-input-number {
+				width: 100%;
+			}
+
+			.el-input-number {
+				.el-input__inner {
+					text-align: center;
+				}
+			}
+
+			.is-without-controls {
+				.el-input__inner {
+					text-align: left;
+				}
+			}
+		}
+
+		&:nth-child(odd) {
+			margin-right: 24px;
+		}
+	}
+}
+
+.el-table {
+	--el-table-border-color: #d1d4e3;
+	.el-checkbox {
+		.el-checkbox__input {
+			.el-checkbox__inner {
+				border: 1px solid #a9a9a9;
+
+				&:hover {
+					border-color: var(--el-checkbox-checked-input-border-color);
+				}
+			}
+		}
+
+		.is-checked,
+		.is-indeterminate {
+			.el-checkbox__inner {
+				border-color: var(--el-checkbox-checked-input-border-color);
+			}
+		}
+	}
+	.el-table__inner-wrapper {
+		&::after {
+			height: 0.0625rem;
+		}
+	}
+}
+/** 小号 表格、下拉框 字体自适应 */
+.el-table--small,
+.el-select--small > .el-select__wrapper {
+	font-size: 0.75rem;
+}
+
+/** table样式自适应 */
+.el-table {
+	.cell {
+		font-size: 0.875rem;
+		padding: 0 0.75rem;
+
+		.el-button--small {
+			font-size: 0.75rem;
+		}
+	}
+}
+
+/** 小号table样式自适应 */
+.el-table--small {
+	.cell {
+		font-size: 0.75rem;
+		padding: 0 0.75rem;
+
+		.el-button--small {
+			font-size: 0.75rem;
+		}
+	}
+}
+
+/** 小号页脚样式自适应 */
+.el-pagination {
+	--el-pagination-font-size-small: 0.75rem;
+
+	.el-input {
+		.el-input__wrapper {
+			font-size: 0.75rem;
+		}
+	}
+}
+
+/** 小号描述列表样式自适应 */
+.el-descriptions--small {
+	.el-descriptions__cell {
+		font-size: 0.75rem !important;
+		padding: 0.25rem 0.4rem !important;
+	}
+}
+
+/** 下好输入框样式自适应 */
+.el-input--small {
+	font-size: 0.75rem;
+
+	.el-input__inner::placeholder {
+		font-size: 0.75rem;
+	}
+}

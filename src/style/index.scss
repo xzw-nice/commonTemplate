@@ -1,0 +1,74 @@
+@import "./variable.scss";
+@import "./mixin.scss";
+@import "./element.scss";
+
+/** table模版页面样式 */
+.templatePage-layout {
+	.templatePage-layout-topOperate {
+		height: $top-operate-height;
+		margin-bottom: $margin-default;
+		@include flex(space-between);
+
+		&-left {
+			//flex: 1;
+			margin-right: $margin-large;
+			@include flex(flex-start);
+			max-width: calc(100% - 100px - $margin-large);
+
+			&-input {
+				width: 270px;
+				margin-right: $margin-small;
+			}
+
+			&-select {
+				width: 200px;
+				margin-right: $margin-small;
+			}
+		}
+
+		&-right {
+			min-width: 100px;
+		}
+	}
+
+	.templatePage-layout-table {
+		height: calc(
+			100% - $top-operate-height - $margin-default - $table-pagination-height -
+				$margin-default
+		);
+
+		.el-table {
+			height: 100%;
+		}
+
+		&-pagination {
+			height: $table-pagination-height;
+			margin-top: $margin-default;
+			display: flex;
+			justify-content: flex-end;
+		}
+	}
+}
+
+/** form行内布局独占一行 */
+.el-form-item-whole {
+	width: calc(100% - 24px) !important;
+}
+
+/** 全局设置滚动条样式 */
+::-webkit-scrollbar {
+	width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: rgba(144, 147, 153, 0.3);
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: rgba(144, 147, 153, 0.5);
+}

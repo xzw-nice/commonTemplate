@@ -1,0 +1,51 @@
+// sass全局变量
+
+// 默认字体颜色
+$default-font-color: #eceaea;
+// 默认字体大小
+$default-font-size: 14px;
+// 首页菜单字体大小
+$outside-menu-size: 16px;
+// 默认系统背景色
+$default-background: #f5f8ff;
+// 菜单背景色
+$theme-menu-color: #fff;
+// 深色背景色
+$theme-menu-dark-color: rgba(22, 93, 255, 1);
+
+// 左侧菜单展开时的宽度
+$menu-left-open-width: 220px;
+// 左侧菜单收缩时的宽度
+$menu-left-shrink-width: 64px;
+// 顶部高度
+$top-bar-height: 56px;
+// 侧栏menuItem高度
+$menu-left-menu-item-height: 38px;
+
+// notebook
+$device-notebook: 1600px;
+// ipad pro
+$device-ipad-pro: 1160px;
+// ipad
+$device-ipad: 800px;
+// mobile
+$device-phone: 500px;
+
+// 内边距尺寸
+$padding-small: 12px;
+$padding-default: 16px;
+$padding-large: 20px;
+// 外边距尺寸
+$margin-small: 12px;
+$margin-default: 16px;
+$margin-large: 20px;
+// 头部操作栏高度
+$top-operate-height: 36px;
+// 底部分页高度
+$table-pagination-height: 36px;
+// 鼠标划入颜色
+$hover-color: #409eff;
+// 绿色（成功）
+$success-color: #3cb371;
+// 红色（失败）
+$error-color: #ff6347;
