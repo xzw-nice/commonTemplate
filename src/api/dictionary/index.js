@@ -1,4 +1,4 @@
-import { del, get, post, put } from "@/utils/request.js"
+import { del, get, post, put } from "@/utils/request.ts"
 
 /**
  * 获取字典数据

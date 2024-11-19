@@ -3,7 +3,7 @@
 		<div class="login-content animate__animated animate__fadeInTopRight">
 			<div class="login-content-title">
 				<img alt="" src="@/assets/img/login_bg.webp" />
-				<span>项目管理工具</span>
+				<span>数字评价基地</span>
 			</div>
 			<div class="login-content-main">
 				<div class="login-bg"></div>
@@ -94,6 +94,7 @@ const loginRule = {
 
 // 登录
 function login() {
+	console.log(1);
 	loginForm_ref.value.validate((valid) => {
 		if (valid) {
 			loginLoading.value = true
@@ -103,7 +104,7 @@ function login() {
 			})
 				.then((res) => {
 					ElMessage.success("登录成功")
-					localStorage.setItem("uen-recruitmentTool-token", res.token)
+					localStorage.setItem("uen-digitalEvaluationBase-token", res.token)
 					// 获取用户信息
 					useUser.getUser().then(() => {
 						nextTick(() => {
@@ -198,12 +199,6 @@ init()
 </script>
 
 <style lang="scss" scoped>
-@font-face {
-	font-family: chuangCuYuan;
-	//src: url("@/assets/font/创粗圆.ttf") format("truetype");
-	//src: url("@/assets/font/快乐积木体.ttf") format("truetype");
-	src: url("@/assets/font/浪潮立影体.ttf") format("truetype");
-}
 
 .login {
 	width: 100%;
@@ -223,7 +218,6 @@ init()
 			height: 40px;
 			font-size: 40px;
 			margin-bottom: $margin-default;
-			font-family: chuangCuYuan;
 			//color: #4682b4;
 			@include flex(flex-start);
 			@include font-gradient(#b0c4de, #3479b2, -90deg);

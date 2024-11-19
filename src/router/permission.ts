@@ -83,7 +83,7 @@ async function firstEnter(to: any, next: any) {
 router.beforeEach((to, from, next) => {
 	// 开始进度条
 	nProgress.start()
-	const token = localStorage.getItem("uen-recruitmentTool-token")
+	const token = localStorage.getItem("uen-digitalEvaluationBase-token")
 	if (to.path !== "/login" && !token) {
 		next("/login")
 	} else if (to.path !== "/login") {

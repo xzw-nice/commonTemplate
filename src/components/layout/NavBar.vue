@@ -3,7 +3,7 @@
 		<div class="layout-navBar-main">
 			<div class="layout-navBar-logo" @click="toHome">
 				<!--				<img alt="暂无图片" src="@/assets/img/logo.png" />-->
-				项目管理工具
+				数字评价基地
 			</div>
 			<div class="layout-navBar-personal">
 				<el-popover :width="200" placement="top-start" title="" trigger="click">
@@ -27,7 +27,7 @@
 								<remix-icon
 									color="#696969"
 									icon-name="user-3-line"
-									size="1rem"
+									size="16px"
 								></remix-icon>
 								{{ useUser.user.info.loginName || "暂无数据" }}
 							</div>
@@ -35,7 +35,7 @@
 								<remix-icon
 									color="#696969"
 									icon-name="phone-line"
-									size="1rem"
+									size="16px"
 								></remix-icon>
 								{{ useUser.user.info.phone || "暂无数据" }}
 							</div>
@@ -43,7 +43,7 @@
 								<remix-icon
 									color="#696969"
 									icon-name="mail-line"
-									size="1rem"
+									size="16px"
 								></remix-icon>
 								{{ useUser.user.info.email || "暂无数据" }}
 							</div>
@@ -53,7 +53,7 @@
 								<remix-icon
 									color="#FF6347"
 									icon-name="logout-box-r-line"
-									size="1rem"
+									size="16px"
 								></remix-icon>
 								退出登录
 							</div>

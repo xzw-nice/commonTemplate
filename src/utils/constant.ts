@@ -12,12 +12,12 @@ export const documentSize = {
 	// 默认尺寸
 	default: {
 		width: 1920,
-		height: 919
+		height: 929
 	},
 	// 最小尺寸
 	min: {
-		width: 1280,
-		height: 559
+		width: 1253,
+		height: 554
 	}
 }
 

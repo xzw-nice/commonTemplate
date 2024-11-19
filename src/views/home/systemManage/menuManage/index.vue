@@ -45,7 +45,7 @@
 						<remix-icon
 							:icon-name="row?.icon"
 							color="#606266"
-							size="1.5rem"
+							size="24px"
 						></remix-icon>
 					</template>
 				</el-table-column>

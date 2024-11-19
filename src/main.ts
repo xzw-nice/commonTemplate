@@ -5,7 +5,6 @@ import router from "./router"
 import "nprogress/nprogress.css"
 import "remixicon/fonts/remixicon.css"
 import "@/router/permission"
-import { setRem } from "./utils/rem"
 import * as ElementPlusIconsVue from "@element-plus/icons-vue"
 
 const app = createApp(App)
@@ -18,9 +17,3 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 const pinia = createPinia()
 
 app.use(pinia).use(router).mount("#app")
-
-setRem()
-
-window.onresize = function () {
-	setRem()
-}

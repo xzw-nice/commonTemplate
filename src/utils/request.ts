@@ -1,8 +1,8 @@
-import { AlovaMethodCreateConfig, createAlova, Method } from "alova"
+import {AlovaMethodCreateConfig, createAlova, Method} from "alova"
 import adapterFetch from "alova/fetch"
 import VueHook from "alova/vue"
-import { baseURL } from "./constant"
-import { useUserStore } from "@/store/user"
+import {baseURL} from "./constant"
+import {useUserStore} from "@/store/user"
 import router from "@/router"
 
 // 发布订阅
@@ -40,7 +40,7 @@ class EventEmitter {
  * @param hash 页面hash
  */
 function generateReqKey(method: Method, hash: any): string {
-	const { type, url, config, data } = method
+	const {type, url, config, data} = method
 	return [
 		type,
 		url,
@@ -71,7 +71,7 @@ const alovaInstance = createAlova({
 		const useUser = useUserStore()
 		// 假设我们需要添加token到请求头
 		method.config.headers.Authorization =
-			useUser.token || localStorage.getItem("uen-recruitmentTool-token") || ""
+			useUser.token || localStorage.getItem("uen-digitalEvaluationBase-token") || ""
 		// 判断是否是hash模式
 		const isHashMode = router.options.history.base.includes("#")
 		const hash = isHashMode ? location.hash : location.pathname
@@ -111,7 +111,7 @@ const alovaInstance = createAlova({
 		onSuccess: async (response: Response, config: Method<any>) => {
 			if (response.status === 200) {
 				let data: any = null
-				if (config.config?.header.responseType === "blob") {
+				if (config.config?.header?.responseType === "blob") {
 					// 流文件处理，使用response.blob()拿数据（异步）
 					data = response
 				} else {
@@ -128,22 +128,37 @@ const alovaInstance = createAlova({
 						throw new Error(json.message) // error.message
 					}
 					// 解析的响应数据将传给method实例的transformData钩子函数
+
 				}
+
 				handleSuccessResponse_limit(data, config)
 				return data
 			}
 			handleSuccessResponse_limit(response.statusText, config)
+			let type:string = "error"
 			switch (response.status) {
 				case 500:
+					type = "500"
 					ElMessage.error("服务器错误")
 					break
 				case 404:
+					type = "404"
 					ElMessage.error("页面未找到")
+					break
+				case 403:
+					type = "403"
+					ElMessage.error("请求被拒绝")
 					break
 				default:
 					ElMessage.error("未知错误")
 					break
 			}
+			await router.push({
+				path: '/serverError',
+				query: {
+					type
+				}
+			});
 			throw new Error(response.statusText) // error.message
 		},
 		// 请求失败的拦截器
@@ -156,7 +171,8 @@ const alovaInstance = createAlova({
 		// 请求完成的拦截器
 		// 当你需要在请求不论是成功、失败、还是命中缓存都需要执行的逻辑时，可以在创建alova实例时指定全局的`onComplete`拦截器，例如关闭请求 loading 状态。
 		// 接收当前请求的method实例
-		onComplete: async (method: Method<any>) => {}
+		onComplete: async (method: Method<any>) => {
+		}
 	}
 })
 
@@ -200,7 +216,7 @@ function handleErrorResponse_limit(error: any, method: Method) {
 }
 
 const get = (url: string, data?: any, header = {}) =>
-	alovaInstance.Get(url, <any>{ params: data, header }).send(true)
+	alovaInstance.Get(url, <any>{params: data, header}).send(true)
 
 const post = (url: string, data?: any, config = {}) =>
 	alovaInstance.Post(url, data, config).send(true)
@@ -211,4 +227,4 @@ const put = (url: string, data?: any, config = {}) =>
 const del = (url: string, data?: any, config = {}) =>
 	alovaInstance.Delete(url, data, config).send(true)
 
-export { get, post, put, del }
+export {get, post, put, del}

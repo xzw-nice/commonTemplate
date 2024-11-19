@@ -71,14 +71,14 @@
 						<remix-icon
 							:icon-name="item"
 							color="#606266"
-							size="1.5rem"
+							size="24px"
 						></remix-icon>
 					</el-option>
 				</el-select>
 				<remix-icon
 					:icon-name="menuForm.icon"
 					color="#333333"
-					size="1.5rem"
+					size="24px"
 				></remix-icon>
 			</el-form-item>
 			<el-form-item v-if="menuForm.type !== 3" label="链接地址：">
