@@ -199,7 +199,10 @@ init()
 </script>
 
 <style lang="scss" scoped>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9adbfe9ac10360811fd9fca8928f2e61106e81b5
 .login {
 	width: 100%;
 	height: 100%;
