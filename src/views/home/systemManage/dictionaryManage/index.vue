@@ -89,7 +89,6 @@
 							v-has="'dictionaries-update'"
 							icon="Edit"
 							link
-							size="small"
 							type="primary"
 							@click="editBtn(row)"
 							>编辑
@@ -98,7 +97,6 @@
 							v-has="'dictionaries-del'"
 							icon="Delete"
 							link
-							size="small"
 							type="danger"
 							@click="delBtn(row)"
 							>删除

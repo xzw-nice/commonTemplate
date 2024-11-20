@@ -82,7 +82,6 @@
 						<el-button
 							icon="View"
 							link
-							size="small"
 							type="primary"
 							@click="getDetail(prop.row.id)"
 							>详情
@@ -95,7 +94,6 @@
 						<el-button
 							icon="Edit"
 							link
-							size="small"
 							type="primary"
 							@click="handleEdit(row)"
 							>编辑
@@ -103,7 +101,6 @@
 						<el-button
 							icon="Delete"
 							link
-							size="small"
 							type="danger"
 							@click="handleDelete(row)"
 							>删除

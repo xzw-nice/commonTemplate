@@ -1,10 +1,10 @@
 <template>
-	<div class="layout-sideMenu layout-sideMenu-nopx">
+	<div class="layout-sideMenu">
 		<el-menu
 			:collapse="props.isCollapse"
 			:default-active="router.currentRoute.value.path"
 			:default-openeds="defaultOpenPath"
-			class="layout-sideMenu-menu sideMenu-menu-nopx"
+			class="layout-sideMenu-menu"
 			popper-effect="dark"
 			router
 			unique-opened
@@ -73,7 +73,7 @@ watch(
 .layout-sideMenu {
 	height: 100%;
 
-	:deep(.sideMenu-menu-nopx) {
+	:deep(.layout-sideMenu-menu) {
 		width: 100%;
 		border-right: none;
 		background-color: transparent;

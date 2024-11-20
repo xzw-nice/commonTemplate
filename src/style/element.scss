@@ -104,40 +104,6 @@
 			}
 		}
 	}
-	.el-table__inner-wrapper {
-		//&::after {
-		//	height: 0.0625rem;
-		//}
-	}
-}
-/** 小号 表格、下拉框 字体自适应 */
-.el-table--small,
-.el-select--small > .el-select__wrapper {
-	//font-size: 0.75rem;
-}
-
-/** table样式自适应 */
-.el-table {
-	.cell {
-		//font-size: 0.875rem;
-		//padding: 0 0.75rem;
-
-		.el-button--small {
-			//font-size: 0.75rem;
-		}
-	}
-}
-
-/** 小号table样式自适应 */
-.el-table--small {
-	.cell {
-		//font-size: 0.75rem;
-		//padding: 0 0.75rem;
-
-		.el-button--small {
-			//font-size: 0.75rem;
-		}
-	}
 }
 
 /** 小号页脚样式自适应 */
@@ -161,9 +127,6 @@
 
 /** 下好输入框样式自适应 */
 .el-input--small {
-	//font-size: 0.75rem;
-
 	.el-input__inner::placeholder {
-		//font-size: 0.75rem;
 	}
 }

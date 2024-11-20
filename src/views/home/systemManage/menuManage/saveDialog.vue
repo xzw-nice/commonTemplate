@@ -3,8 +3,8 @@
 		v-model="visible"
 		:close-on-click-modal="false"
 		:title="menuForm.id ? '编辑' : '新增'"
-		style="min-width: 540px"
-		width="42vw"
+		style="min-width: 720px"
+		width="48vw"
 	>
 		<el-form
 			ref="menuForm_ref"

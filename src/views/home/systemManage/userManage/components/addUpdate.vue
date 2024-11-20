@@ -5,8 +5,8 @@
 		:center="false"
 		:close-on-click-modal="false"
 		:title="isEdit ? '编辑用户' : '添加用户'"
-		append-to-body
-		width="800px"
+		append-to="#main"
+    width="800px"
 	>
 		<el-form
 			:key="fKey"

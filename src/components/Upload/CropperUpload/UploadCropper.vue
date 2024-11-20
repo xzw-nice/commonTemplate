@@ -20,7 +20,6 @@
 		v-model="data.visibleCropper"
 		:close-on-click-modal="false"
 		:modal="false"
-		append-to-body
 		class="upload-dialog changeCropper"
 		title="图片裁剪"
 		top="5vh"

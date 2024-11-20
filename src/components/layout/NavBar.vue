@@ -1,12 +1,12 @@
 <template>
-	<div class="layout-navBar-nopx">
+	<div class="layout-navBar">
 		<div class="layout-navBar-main">
 			<div class="layout-navBar-logo" @click="toHome">
 				<!--				<img alt="暂无图片" src="@/assets/img/logo.png" />-->
 				数字评价基地
 			</div>
 			<div class="layout-navBar-personal">
-				<el-popover :width="200" placement="top-start" title="" trigger="click">
+				<el-popover :teleported="false" :width="200" placement="top-start" title="" trigger="click">
 					<template #reference>
 						<!--            <el-button class="m-2">Hover to activate</el-button>-->
 						<div class="layout-navBar-personal-main">
@@ -82,6 +82,8 @@ const avatar = computed(() => {
 		: "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png"
 })
 
+
+
 function logout() {
 	sysLogout().finally(() => {
 		initStoreData()
@@ -95,7 +97,7 @@ function toHome() {
 }
 </script>
 <style lang="scss" scoped>
-.layout-navBar-nopx {
+.layout-navBar {
 	width: 100%;
 	height: 100%;
 	//background-color: #364870;
@@ -144,36 +146,36 @@ function toHome() {
 		}
 	}
 }
-
 .personal-popover {
-	font-size: 13px;
+  font-size: 13px;
 
-	.personal-popover-item {
-		padding: 8px 0;
-		@include flex(flex-start);
+  .personal-popover-item {
+    padding: 8px 0;
+    @include flex(flex-start);
 
-		.remixIcon {
-			margin-right: 8px;
-		}
-	}
+    .remixIcon {
+      margin-right: 8px;
+    }
+  }
 
-	&-main {
-		border-bottom: 1px solid #e9ecef;
+  &-main {
+    border-bottom: 1px solid #e9ecef;
 
-		.personal-popover-item {
-			&:first-child {
-				padding-top: 0;
-			}
-		}
-	}
+    .personal-popover-item {
+      &:first-child {
+        padding-top: 0;
+      }
+    }
+  }
 
-	&-logout {
-		color: #ff6347;
+  &-logout {
+    color: #ff6347;
 
-		.personal-popover-item {
-			padding-bottom: 0;
-			cursor: pointer;
-		}
-	}
+    .personal-popover-item {
+      padding-bottom: 0;
+      cursor: pointer;
+    }
+  }
 }
+
 </style>

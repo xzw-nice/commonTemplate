@@ -14,7 +14,7 @@
 			class="saveDialog-form"
 			inline
 			label-position="right"
-			label-width="auto"
+			label-width="120px"
 		>
 			<el-form-item label="归属：" prop="belong">
 				<el-input

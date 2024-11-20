@@ -1,16 +1,16 @@
 <template>
 	<el-container class="layout">
-		<el-header class="layout-header header-nopx">
+		<el-header class="layout-header">
 			<nav-bar></nav-bar>
 		</el-header>
-		<el-container class="layout-container container-nopx">
+		<el-container class="layout-container">
 			<el-aside
 				:style="{
 					width: collapse
 						? sideMenuWidth.collapsedWidth
 						: sideMenuWidth.expandedWidth
 				}"
-				class="layout-aside aside-nopx"
+				class="layout-aside"
 			>
 				<div class="aside-collapse" @click="changeCollapse">
 					<el-icon>
@@ -67,20 +67,14 @@ function changeCollapse() {
 
 	&-header {
 		padding: 0;
-		position: sticky;
+		position: relative;
 		top: 0;
-	}
-
-	.header-nopx {
-		height: $top-bar-height;
-	}
-
-	.container-nopx {
-		height: calc(100% - 60px);
+    height: $top-bar-height;
 	}
 
 	&-container {
-		.aside-nopx {
+    height: calc(100% - 60px);
+		.layout-aside {
 			//min-width: $menu-left-shrink-width;
 			width: auto;
 			background: linear-gradient(to bottom, #53628a, rgba(29, 41, 61, 0.8));

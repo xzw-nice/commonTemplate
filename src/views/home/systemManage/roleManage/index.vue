@@ -93,7 +93,6 @@
 							<template #default="scope">
 								<el-button
 									link
-									size="small"
 									type="primary"
 									@click="handleEdit(scope.row)"
 									>编辑
@@ -111,7 +110,7 @@
 									@confirm="handleDelete(scope.row)"
 								>
 									<template #reference>
-										<el-button link size="small" type="danger"
+										<el-button link type="danger"
 											>删除
 											<el-icon class="el-icon--right">
 												<Delete />
@@ -122,7 +121,6 @@
 
 								<el-button
 									link
-									size="small"
 									type="warning"
 									@click="menuConfiguration(scope.row)"
 									>菜单分配

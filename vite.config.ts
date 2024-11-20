@@ -42,11 +42,15 @@ export default defineConfig(({mode})=>{
 			}),
 			// 依赖按需加载
 			AutoImport({
-				resolvers: [ElementPlusResolver()]
+				resolvers: [ElementPlusResolver({
+					directives: true,
+				})]
 			}),
 			// 组件按需导入
 			Components({
-				resolvers: [ElementPlusResolver()]
+				resolvers: [ElementPlusResolver({
+					directives: true,
+				})]
 			})
 		],
 		build: {

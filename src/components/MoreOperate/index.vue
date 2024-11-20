@@ -1,6 +1,6 @@
 <!-- 更多操作下拉菜单配置 -->
 <template>
-	<el-dropdown v-bind="bind" v-on="props.dropdownEvents">
+	<el-dropdown :teleported="false" v-bind="bind" v-on="props.dropdownEvents">
 		<slot name="default">
 			<el-button :size="bind.size || 'default'" type="primary">
 				更多操作

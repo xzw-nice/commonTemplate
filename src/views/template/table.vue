@@ -52,7 +52,6 @@
 						<el-button
 							icon="Edit"
 							link
-							size="small"
 							type="primary"
 							@click="editBtn(row)"
 							>编辑
@@ -60,7 +59,6 @@
 						<el-button
 							icon="Delete"
 							link
-							size="small"
 							type="danger"
 							@click="delBtn(row)"
 							>删除

@@ -1,18 +1,22 @@
 <template>
 	<div id="main" class="main">
+    <el-config-provider :locale="zhCn">
 		<router-view />
+    </el-config-provider>
 	</div>
 </template>
 
 <script lang="ts" setup>
+import zhCn from "element-plus/dist/locale/zh-cn"
 import {onMounted} from "vue";
-import autofit from 'autofit.js'
+import autofit, {elRectification} from 'autofit.js'
 
 onMounted(()=>{
 	autofit.init({
 		el: "#main",
 		resize: true,
 	});
+  elRectification('div[id*="el-popper-container"]');
 })
 
 </script>
@@ -24,8 +28,8 @@ onMounted(()=>{
 
 html,
 body {
-	width: 100%;
-	height: 100%;
+	width: 100vw;
+	height: 100vh;
 	font-size: 16px;
 }
 
@@ -42,9 +46,13 @@ img {
 	border: none;
 }
 
+#app{
+  width: 100%;
+  height: 100%;
+}
 .main {
 	width: 100%;
-	height: 100vh;
+	height: 100%;
 
 	> div {
 		width: 100%;
