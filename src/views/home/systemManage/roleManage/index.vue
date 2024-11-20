@@ -196,7 +196,7 @@ import {
 import addUpdate from "./components/addUpdate.vue"
 import { getMenu, getMenuTree } from "@/api/systemManage/menuManage/index.js"
 import { Delete, Edit, Right } from "@element-plus/icons"
-import { debounce } from "radash"
+import { debounce } from "lodash"
 import { ElMessage } from "element-plus"
 // 查询条件
 const searchList = reactive({
@@ -370,7 +370,7 @@ function flatten(treeMenu, result) {
 }
 
 // 保存菜单
-const saveRoleMenus = debounce({ delay: 500 }, async () => {
+const saveRoleMenus = debounce(async () => {
 	// 角色菜单为空
 	roleMenus.value = []
 	// 返回选中子节点的key
@@ -395,7 +395,7 @@ const saveRoleMenus = debounce({ delay: 500 }, async () => {
 	} else {
 		ElMessage.error("请指定角色后操作")
 	}
-})
+},500)
 
 getList()
 getMenuTreeData()

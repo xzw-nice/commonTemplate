@@ -199,10 +199,7 @@ init()
 </script>
 
 <style lang="scss" scoped>
-<<<<<<< HEAD
 
-=======
->>>>>>> 9adbfe9ac10360811fd9fca8928f2e61106e81b5
 .login {
 	width: 100%;
 	height: 100%;
@@ -210,7 +207,7 @@ init()
 	@include flex(space-around);
 
 	&-content {
-		width: 800px;
+		width: 850px;
 		height: 500px;
 		background-color: rgba(240, 248, 255, 0.6);
 		box-shadow: 0 0 20px rgba(51, 51, 51, 0.2);
@@ -262,11 +259,6 @@ init()
 	&-box {
 		width: 320px;
 		height: 100%;
-		//height: 500px;
-		//padding: $padding-large;
-		//background-color: rgba(240, 248, 255, 0.6);
-		//box-shadow: 0 0 20px rgba(51, 51, 51, 0.2);
-		//border-radius: 10px;
 		@include flex(center, center, column);
 
 		&-title {
@@ -284,8 +276,12 @@ init()
 					margin-bottom: 24px;
 				}
 
-				.el-input {
-					:deep(.el-input__wrapper) {
+				:deep(.el-input) {
+					font-size: 16px;
+					.el-input__prefix{
+						font-size: 20px;
+					}
+					.el-input__wrapper {
 						background-color: rgba(70, 130, 180, 0.1);
 					}
 				}

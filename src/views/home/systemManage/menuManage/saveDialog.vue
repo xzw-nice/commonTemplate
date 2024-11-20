@@ -135,7 +135,7 @@ import { computed, ref, watch } from "vue"
 import { remixIconsLineValues } from "@/assets/icon/remixIcon/icons.js"
 import RemixIcon from "@/components/SvgIcon/RemixIcon.vue"
 import { addMenu, editMenu } from "@/api/systemManage/menuManage"
-import { debounce } from "radash"
+import { debounce } from "lodash"
 import { reverseTreeQuery } from "@/utils/global.ts"
 
 const props = defineProps({
@@ -205,7 +205,7 @@ function handleClose() {
 }
 
 // 提交
-const handleSubmit = debounce({ delay: 500 }, async () => {
+const handleSubmit = debounce( async () => {
 	if (!menuForm_ref.value) {
 		return
 	}
@@ -225,7 +225,7 @@ const handleSubmit = debounce({ delay: 500 }, async () => {
 			}
 		}
 	})
-})
+},500)
 
 watch(
 	() => props.originData,

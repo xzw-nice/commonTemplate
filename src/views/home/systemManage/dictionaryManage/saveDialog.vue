@@ -81,7 +81,7 @@
 <script setup>
 import { ref, computed, watch } from "vue"
 import { addDictionary, editDictionary } from "@/api/dictionary/index.js"
-import { debounce } from "radash"
+import { debounce } from "lodash"
 
 const props = defineProps({
 	// 弹框显隐
@@ -139,7 +139,7 @@ function handleClose() {
 }
 
 // 提交
-const handleSubmit = debounce({ delay: 500 }, async () => {
+const handleSubmit = debounce(async () => {
 	if (!dialogForm_ref.value) {
 		return
 	}
@@ -157,7 +157,7 @@ const handleSubmit = debounce({ delay: 500 }, async () => {
 			}
 		}
 	})
-})
+},500)
 
 // 监听表单数据变化
 watch(

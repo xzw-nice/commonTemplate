@@ -131,7 +131,7 @@ import PictureUpload from "@/components/Upload/CropperUpload/index.vue"
 import md5 from "md5"
 import { fileUpload } from "@/utils/global.ts"
 import { fileProxy } from "@/utils/constant.ts"
-import { debounce } from "radash"
+import { debounce } from "lodash"
 
 const props = defineProps({
 	editData: { type: Object, required: true },
@@ -246,7 +246,7 @@ watch(
 	}
 )
 
-const sure = debounce({ delay: 500 }, async () => {
+const sure = debounce( async () => {
 	dataFormRef.value.validate(async (valid) => {
 		if (valid) {
 			// if (signImgInfo.value && Object.keys(signImgInfo.value).length) {
@@ -283,7 +283,7 @@ const sure = debounce({ delay: 500 }, async () => {
 			}
 		}
 	})
-})
+},500)
 
 function signImgUpload(imgInfo, currentImg) {
 	const arr = [

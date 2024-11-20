@@ -50,7 +50,7 @@
 <script setup>
 import { ref, watch } from "vue"
 import { roleAdd, roleEdit } from "@/api/systemManage/roleManage"
-import { debounce } from "radash"
+import { debounce } from "lodash"
 
 const props = defineProps({
 	editData: {
@@ -96,7 +96,7 @@ watch(
 	}
 )
 
-const sure = debounce({ delay: 500 }, async () => {
+const sure = debounce(async () => {
 	dataFormRef.value.validate(async (vaild) => {
 		if (vaild) {
 			if (props.isEdit) {
@@ -114,7 +114,7 @@ const sure = debounce({ delay: 500 }, async () => {
 			ElMessage.success("数据验证失败")
 		}
 	})
-})
+},500)
 
 defineExpose({
 	dialogVisible
