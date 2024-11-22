@@ -48,7 +48,6 @@
 				<el-table-column align="center" label="登录账号" prop="loginName" />
 				<el-table-column align="center" label="手机号" prop="phone" />
 				<el-table-column align="center" label="邮箱" prop="email" />
-				<el-table-column align="center" label="角色" prop="userName" />
 				<el-table-column align="center" label="状态" prop="status" width="180">
 					<template #default="prop">
 						<el-popconfirm
