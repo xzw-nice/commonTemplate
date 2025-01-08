@@ -94,7 +94,7 @@ const loginRule = {
 
 // 登录
 function login() {
-	console.log(1);
+	console.log(1)
 	loginForm_ref.value.validate((valid) => {
 		if (valid) {
 			loginLoading.value = true
@@ -199,7 +199,6 @@ init()
 </script>
 
 <style lang="scss" scoped>
-
 .login {
 	width: 100%;
 	height: 100%;
@@ -278,7 +277,7 @@ init()
 
 				:deep(.el-input) {
 					font-size: 16px;
-					.el-input__prefix{
+					.el-input__prefix {
 						font-size: 20px;
 					}
 					.el-input__wrapper {

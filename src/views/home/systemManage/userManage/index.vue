@@ -91,11 +91,7 @@
 
 				<el-table-column align="center" fixed="right" label="操作" width="180">
 					<template #default="{ row }">
-						<el-button
-							icon="Edit"
-							link
-							type="primary"
-							@click="handleEdit(row)"
+						<el-button icon="Edit" link type="primary" @click="handleEdit(row)"
 							>编辑
 						</el-button>
 						<el-button

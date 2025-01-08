@@ -91,10 +91,7 @@
 							width="250"
 						>
 							<template #default="scope">
-								<el-button
-									link
-									type="primary"
-									@click="handleEdit(scope.row)"
+								<el-button link type="primary" @click="handleEdit(scope.row)"
 									>编辑
 									<el-icon class="el-icon--right">
 										<Edit />
@@ -393,7 +390,7 @@ const saveRoleMenus = debounce(async () => {
 	} else {
 		ElMessage.error("请指定角色后操作")
 	}
-},500)
+}, 500)
 
 getList()
 getMenuTreeData()

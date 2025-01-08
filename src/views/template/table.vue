@@ -49,18 +49,10 @@
 				</el-table-column>
 				<el-table-column align="center" fixed="right" label="操作" width="180">
 					<template #default="{ row }">
-						<el-button
-							icon="Edit"
-							link
-							type="primary"
-							@click="editBtn(row)"
+						<el-button icon="Edit" link type="primary" @click="editBtn(row)"
 							>编辑
 						</el-button>
-						<el-button
-							icon="Delete"
-							link
-							type="danger"
-							@click="delBtn(row)"
+						<el-button icon="Delete" link type="danger" @click="delBtn(row)"
 							>删除
 						</el-button>
 					</template>

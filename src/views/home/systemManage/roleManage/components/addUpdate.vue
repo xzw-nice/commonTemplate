@@ -114,7 +114,7 @@ const sure = debounce(async () => {
 			ElMessage.success("数据验证失败")
 		}
 	})
-},500)
+}, 500)
 
 defineExpose({
 	dialogVisible

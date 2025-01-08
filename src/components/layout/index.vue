@@ -69,11 +69,11 @@ function changeCollapse() {
 		padding: 0;
 		position: relative;
 		top: 0;
-    height: $top-bar-height;
+		height: $top-bar-height;
 	}
 
 	&-container {
-    height: calc(100% - 60px);
+		height: calc(100% - 60px);
 		.layout-aside {
 			//min-width: $menu-left-shrink-width;
 			width: auto;
