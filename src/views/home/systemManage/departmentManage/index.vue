@@ -2,20 +2,40 @@
 	<div class="templatePage-layout">
 		<div class="templatePage-layout-topOperate">
 			<div class="templatePage-layout-topOperate-left">
-				<el-input v-model="searchList.deptName" class="templatePage-layout-topOperate-left-input" clearable
-					placeholder="输入部门名称搜索" @change="handleSearch"></el-input>
+				<el-input
+					v-model="searchList.deptName"
+					class="templatePage-layout-topOperate-left-input"
+					clearable
+					placeholder="输入部门名称搜索"
+					@change="handleSearch"
+				></el-input>
 			</div>
 			<div class="templatePage-layout-topOperate-right">
-				<more-operate :dropdown-events="{ command: dropdown.event }" :dropdown-item="dropdown.list" />
+				<more-operate
+					:dropdown-events="{ command: dropdown.event }"
+					:dropdown-item="dropdown.list"
+				/>
 			</div>
 		</div>
 		<div v-loading="loading" class="templatePage-layout-table">
-			<el-table :data="tableData" border lazy row-key="id" @selection-change="multipleDel">
+			<el-table
+				:data="tableData"
+				border
+				lazy
+				row-key="id"
+				@selection-change="multipleDel"
+			>
 				<template #empty>
 					<el-empty description="暂无数据" />
 				</template>
-				<el-table-column :show-overflow-tooltip="false" align="center" fixed="left" prop="selection" type="selection"
-					width="50"></el-table-column>
+				<el-table-column
+					:show-overflow-tooltip="false"
+					align="center"
+					fixed="left"
+					prop="selection"
+					type="selection"
+					width="50"
+				></el-table-column>
 				<!--				<el-table-column-->
 				<!--					align="center"-->
 				<!--					fixed="left"-->
@@ -27,19 +47,40 @@
 				<!--						{{ (searchList.current - 1) * searchList.size + $index + 1 }}-->
 				<!--					</template>-->
 				<!--				</el-table-column>-->
-				<el-table-column align="left" prop="name" label="部门名称" header-align="center"></el-table-column>
+				<el-table-column
+					align="left"
+					prop="name"
+					label="部门名称"
+					header-align="center"
+				></el-table-column>
 				<el-table-column align="center" prop="status" label="部门状态">
 					<template #default="{ row }">
-						<el-switch v-model="row['status']" :active-value="1" :inactive-value="0" active-text="启用" inactive-text="禁用"
-							active-color="#ff4949" class="table_switch" inactive-color="#13ce66" @change="handleToggleState(row)" />
+						<el-switch
+							v-model="row['status']"
+							:active-value="1"
+							:inactive-value="0"
+							active-text="启用"
+							inactive-text="禁用"
+							active-color="#ff4949"
+							class="table_switch"
+							inactive-color="#13ce66"
+							@change="handleToggleState(row)"
+						/>
 					</template>
 				</el-table-column>
-				<el-table-column width="80" align="center" prop="ord" label="序号"></el-table-column>
+				<!--				<el-table-column-->
+				<!--					width="80"-->
+				<!--					align="center"-->
+				<!--					prop="ord"-->
+				<!--					label="序号"-->
+				<!--				></el-table-column>-->
 				<el-table-column align="center" fixed="right" label="操作" width="180">
 					<template #default="{ row }">
-						<el-button icon="Edit" link type="primary" @click="editBtn(row)">编辑
+						<el-button icon="Edit" link type="primary" @click="editBtn(row)"
+							>编辑
 						</el-button>
-						<el-button icon="Delete" link type="danger" @click="delBtn(row)">删除
+						<el-button icon="Delete" link type="danger" @click="delBtn(row)"
+							>删除
 						</el-button>
 					</template>
 				</el-table-column>
@@ -55,8 +96,12 @@
 			<!--				@current-change="getList"-->
 			<!--			/>-->
 		</div>
-		<save-dialog v-model="saveDialogData.visible" :origin-data="saveDialogData.data" :depart-tree-list="tableData"
-			@getList="getList" />
+		<save-dialog
+			v-model="saveDialogData.visible"
+			:origin-data="saveDialogData.data"
+			:depart-tree-list="tableData"
+			@getList="getList"
+		/>
 	</div>
 </template>
 

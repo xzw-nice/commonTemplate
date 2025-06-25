@@ -6,7 +6,7 @@
 		:close-on-click-modal="false"
 		:title="isEdit ? '编辑用户' : '添加用户'"
 		append-to="#main"
-		width="800px"
+    width="800px"
 	>
 		<el-form
 			:key="fKey"
@@ -246,7 +246,7 @@ watch(
 	}
 )
 
-const sure = debounce(async () => {
+const sure = debounce( async () => {
 	dataFormRef.value.validate(async (valid) => {
 		if (valid) {
 			// if (signImgInfo.value && Object.keys(signImgInfo.value).length) {
@@ -283,7 +283,7 @@ const sure = debounce(async () => {
 			}
 		}
 	})
-}, 500)
+},500)
 
 function signImgUpload(imgInfo, currentImg) {
 	const arr = [

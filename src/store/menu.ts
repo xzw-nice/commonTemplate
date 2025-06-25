@@ -43,7 +43,7 @@ export const useMenuStore = defineStore("menu", {
 		setMenu(menuList: MenuType[]) {
 			this.menuList = menuList
 			localStorage.setItem(
-				"uen-digitalEvaluationBase-menuList",
+				"uen-hiddenDangerManage-menuList",
 				JSON.stringify(menuList)
 			)
 		},
@@ -77,14 +77,14 @@ export const useMenuStore = defineStore("menu", {
 			this.syncMenuList = handlerMenu(syncMenuList)
 			console.log(this.syncMenuList)
 			localStorage.setItem(
-				"uen-digitalEvaluationBase-syncMenuList",
+				"uen-hiddenDangerManage-syncMenuList",
 				JSON.stringify(this.syncMenuList)
 			)
 		},
 		// 设置当前菜单
 		setCurrentMenu(currentMenu: string) {
 			this.currentMenu = currentMenu
-			localStorage.setItem("uen-digitalEvaluationBase-currentMenu", currentMenu)
+			localStorage.setItem("uen-hiddenDangerManage-currentMenu", currentMenu)
 		},
 		/** 初始化菜单数据 */
 		initMenu() {
@@ -92,8 +92,8 @@ export const useMenuStore = defineStore("menu", {
 			this.syncMenuList = []
 			this.homeMenuList = []
 			this.manageMenuList = []
-			localStorage.removeItem("uen-digitalEvaluationBase-menuList")
-			localStorage.removeItem("uen-digitalEvaluationBase-syncMenuList")
+			localStorage.removeItem("uen-hiddenDangerManage-menuList")
+			localStorage.removeItem("uen-hiddenDangerManage-syncMenuList")
 		}
 	}
 })

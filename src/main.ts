@@ -7,6 +7,7 @@ import "remixicon/fonts/remixicon.css"
 import "@/router/permission"
 import * as ElementPlusIconsVue from "@element-plus/icons-vue"
 import { directive } from "@/utils/directive"
+import ElementPlus from "element-plus"
 
 const app = createApp(App)
 
@@ -17,4 +18,4 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 
 const pinia = createPinia()
 
-app.use(pinia).use(router).use(directive).mount("#app")
+app.use(pinia).use(router).use(ElementPlus).use(directive).mount("#app")

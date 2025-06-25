@@ -78,14 +78,17 @@ async function firstEnter(to: any, next: any) {
 		next()
 	}
 }
-
 // 路由前置守卫
 router.beforeEach((to, from, next) => {
 	// 开始进度条
 	nProgress.start()
-	const token = localStorage.getItem("uen-digitalEvaluationBase-token")
-	if (to.path !== "/login" && !token) {
-		next("/login")
+	const token = localStorage.getItem("uen-hiddenDangerManage-token")
+	if (!token) {
+		if (to.path === "/login") {
+			next()
+		} else {
+			next("/login")
+		}
 	} else if (to.path !== "/login") {
 		firstEnter(to, next).then()
 	} else {

@@ -5,7 +5,7 @@ import { get, post, del, put } from "@/utils/request.ts"
  * @param {{isAll:boolean,cid?:number,deptName?:string,isLogin?:boolean,status?:boolean}} data
  * @return {Promise}
  */
-const getDepartmentTree = (data) => post("/sys/department/tree", data)
+const getDepartmentTree = (data) => get("/sys/department/tree", data)
 
 /**
  * 重置用户部门关联

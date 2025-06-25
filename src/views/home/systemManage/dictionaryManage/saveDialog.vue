@@ -157,7 +157,7 @@ const handleSubmit = debounce(async () => {
 			}
 		}
 	})
-}, 500)
+},500)
 
 // 监听表单数据变化
 watch(

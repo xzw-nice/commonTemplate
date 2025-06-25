@@ -5,6 +5,7 @@
 		:title="form.id ? '编辑' : '新增'"
 		style="min-width: 540px"
 		width="40vw"
+		append-to-body
 	>
 		<el-form
 			ref="dialogForm_ref"
@@ -36,12 +37,12 @@
 					placeholder="请输入名称"
 				></el-input>
 			</el-form-item>
-			<el-form-item label="序号：">
-				<el-input-number
-					v-model="form.ord"
-					placeholder="请输入序号"
-				></el-input-number>
-			</el-form-item>
+			<!--			<el-form-item label="序号：">-->
+			<!--				<el-input-number-->
+			<!--					v-model="form.ord"-->
+			<!--					placeholder="请输入序号"-->
+			<!--				></el-input-number>-->
+			<!--			</el-form-item>-->
 			<el-form-item label="是否启用：">
 				<el-switch
 					v-model="form.status"
@@ -111,8 +112,8 @@ const visible = computed({
 const form = ref({
 	pid: [], // 父编号
 	name: "", // 名称
-	status: 1, // 状态
-	ord: null
+	status: 1 // 状态
+	// ord: null
 })
 
 // 表单校验
@@ -127,6 +128,7 @@ function handleClose() {
 
 // 提交
 async function handleSubmit() {
+	debugger
 	if (!dialogForm_ref.value) {
 		return
 	}
@@ -161,8 +163,8 @@ watch(
 			form.value = {
 				pid: [], // 父编号
 				name: "", // 名称
-				status: 1, // 状态
-				ord: null
+				status: 1 // 状态
+				// ord: null
 			}
 		}
 	},

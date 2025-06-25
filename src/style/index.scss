@@ -11,10 +11,15 @@
 
 		&-left {
 			//flex: 1;
+			height: 100%;
 			margin-right: $margin-large;
 			@include flex(flex-start);
 			max-width: calc(100% - 100px - $margin-large);
-
+			&-defaultFilter{
+				height: 100%;
+				@include flex(flex-start);
+				margin-right: $margin-large;
+			}
 			&-input {
 				width: 270px;
 				margin-right: $margin-small;
@@ -34,7 +39,7 @@
 	.templatePage-layout-table {
 		height: calc(
 			100% - $top-operate-height - $margin-default - $table-pagination-height -
-				$margin-default
+			$margin-default
 		);
 
 		.el-table {

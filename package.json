@@ -1,5 +1,5 @@
 {
-	"name": "uen-digital-evaluation-base",
+	"name": "uen-hidden-danger-manage",
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
@@ -50,7 +50,7 @@
 		"typescript": "5.0.2",
 		"unplugin-auto-import": "^0.16.4",
 		"unplugin-vue-components": "^0.25.1",
-		"vite": "^4.3.9",
+		"vite": "^6.0.0",
 		"vite-plugin-compression": "^0.5.1",
 		"vue-tsc": "^1.4.2"
 	}

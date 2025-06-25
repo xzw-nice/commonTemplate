@@ -205,7 +205,7 @@ function handleClose() {
 }
 
 // 提交
-const handleSubmit = debounce(async () => {
+const handleSubmit = debounce( async () => {
 	if (!menuForm_ref.value) {
 		return
 	}
@@ -225,7 +225,7 @@ const handleSubmit = debounce(async () => {
 			}
 		}
 	})
-}, 500)
+},500)
 
 watch(
 	() => props.originData,

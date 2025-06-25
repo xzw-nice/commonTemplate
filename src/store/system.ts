@@ -16,14 +16,14 @@ export const useSystemStore = defineStore("system", {
 		setDictionary(dictionary: any) {
 			this.dictionary = dictionary
 			localStorage.setItem(
-				"uen-digitalEvaluationBase-dictionary",
+				"uen-hiddenDangerManage-dictionary",
 				JSON.stringify(dictionary)
 			)
 		},
 		/** 初始化系统数据 */
 		initSystem() {
 			this.dictionary = {}
-			localStorage.removeItem("uen-digitalEvaluationBase-dictionary")
+			localStorage.removeItem("uen-hiddenDangerManage-dictionary")
 		}
 	}
 })

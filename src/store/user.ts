@@ -13,7 +13,7 @@ export const useUserStore = defineStore("user", {
 			roleList:
 				<string[]>(
 					JSON.parse(
-						localStorage.getItem("uen-digitalEvaluationBase-roleList") as any
+						localStorage.getItem("uen-hiddenDangerManage-roleList") as any
 					)
 				) || [] // 权限字符列表
 		}
@@ -38,7 +38,7 @@ export const useUserStore = defineStore("user", {
 		setUser(info: Record<string, any>) {
 			this.user.info = { ...info }
 			localStorage.setItem(
-				"uen-digitalEvaluationBase-userInfo",
+				"uen-hiddenDangerManage-userInfo",
 				JSON.stringify(this.user.info)
 			)
 		},
@@ -46,13 +46,13 @@ export const useUserStore = defineStore("user", {
 		setToken(token: string) {
 			this.token = token
 			this.user.isLogin = true
-			localStorage.setItem("uen-digitalEvaluationBase-token", token)
+			localStorage.setItem("uen-hiddenDangerManage-token", token)
 		},
 		/** 设置权限 */
 		setRoleList(roleList: string[] = []) {
 			this.roleList = [...roleList, "show"]
 			localStorage.setItem(
-				"uen-digitalEvaluationBase-roleList",
+				"uen-hiddenDangerManage-roleList",
 				JSON.stringify(this.roleList)
 			)
 		},
@@ -64,9 +64,9 @@ export const useUserStore = defineStore("user", {
 			}
 			this.token = ""
 			this.roleList = []
-			localStorage.removeItem("uen-digitalEvaluationBase-token")
-			localStorage.removeItem("uen-digitalEvaluationBase-roleList")
-			localStorage.removeItem("uen-digitalEvaluationBase-userInfo")
+			localStorage.removeItem("uen-hiddenDangerManage-token")
+			localStorage.removeItem("uen-hiddenDangerManage-roleList")
+			localStorage.removeItem("uen-hiddenDangerManage-userInfo")
 		}
 	}
 })

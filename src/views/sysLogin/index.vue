@@ -3,7 +3,7 @@
 		<div class="login-content animate__animated animate__fadeInTopRight">
 			<div class="login-content-title">
 				<img alt="" src="@/assets/img/login_bg.webp" />
-				<span>数字评价基地</span>
+				<span>隐患管理系统</span>
 			</div>
 			<div class="login-content-main">
 				<div class="login-bg"></div>
@@ -84,7 +84,7 @@ const loginForm_ref = ref()
 // 表单数据
 const loginForm = reactive({
 	loginName: "admin",
-	password: "123456"
+	password: "nbdyj2186@"
 })
 // 校验规则
 const loginRule = {
@@ -94,7 +94,7 @@ const loginRule = {
 
 // 登录
 function login() {
-	console.log(1)
+	console.log(1);
 	loginForm_ref.value.validate((valid) => {
 		if (valid) {
 			loginLoading.value = true
@@ -104,7 +104,7 @@ function login() {
 			})
 				.then((res) => {
 					ElMessage.success("登录成功")
-					localStorage.setItem("uen-digitalEvaluationBase-token", res.token)
+					localStorage.setItem("uen-hiddenDangerManage-token", res.token)
 					// 获取用户信息
 					useUser.getUser().then(() => {
 						nextTick(() => {
@@ -199,6 +199,7 @@ init()
 </script>
 
 <style lang="scss" scoped>
+
 .login {
 	width: 100%;
 	height: 100%;
@@ -277,7 +278,7 @@ init()
 
 				:deep(.el-input) {
 					font-size: 16px;
-					.el-input__prefix {
+					.el-input__prefix{
 						font-size: 20px;
 					}
 					.el-input__wrapper {

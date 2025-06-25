@@ -1,14 +1,14 @@
-import { defineConfig } from "vite"
+import {defineConfig} from "vite"
 import compression from "vite-plugin-compression"
 import vue from "@vitejs/plugin-vue"
-import { resolve } from "path"
+import {resolve} from "path"
 import AutoImport from "unplugin-auto-import/vite"
 import Components from "unplugin-vue-components/vite"
-import { ElementPlusResolver } from "unplugin-vue-components/resolvers"
+import {ElementPlusResolver} from "unplugin-vue-components/resolvers"
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => {
+export default defineConfig(({mode})=>{
 	return {
-		base: "/base", //动态基础路径
+		base: "/base",  //动态基础路径
 		server: {
 			port: 8088, // 启动端口
 			open: true, // 打开默认浏览器
@@ -16,7 +16,7 @@ export default defineConfig(({ mode }) => {
 			host: "0.0.0.0",
 			proxy: {
 				"/api": {
-					target: "http://192.168.0.103:8005/uen", //你要跨域访问的网址
+					target: "http://192.168.0.103:8011/uen", //你要跨域访问的网址
 					changeOrigin: true, // 允许跨域
 					rewrite: (path) => path.replace(/^\/api/, "") // 重写路径把路径变成空字符
 				},
@@ -42,19 +42,15 @@ export default defineConfig(({ mode }) => {
 			}),
 			// 依赖按需加载
 			AutoImport({
-				resolvers: [
-					ElementPlusResolver({
-						directives: true
-					})
-				]
+				resolvers: [ElementPlusResolver({
+					directives: true,
+				})]
 			}),
 			// 组件按需导入
 			Components({
-				resolvers: [
-					ElementPlusResolver({
-						directives: true
-					})
-				]
+				resolvers: [ElementPlusResolver({
+					directives: true,
+				})]
 			})
 		],
 		build: {

@@ -29,12 +29,9 @@ export const sideMenuWidth: Record<string, any> = {
 
 // 路由大归类
 export const routeSortOut: any = {
-	// list: ["home", "systemManage", "dataCenter"],
-	list: ["home", "dataCenter"],
+	list: ["home"],
 	nameList: {
 		home: "首页",
-		// systemManage: "系统",
-		dataCenter: "数据"
 	}
 }
 

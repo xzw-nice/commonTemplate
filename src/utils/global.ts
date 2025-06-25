@@ -38,8 +38,7 @@ export function fileUpload(
 
 		// 获取token
 		const token: string =
-			useUserStore().token ||
-			localStorage.getItem("uen-digitalEvaluationBase-token")
+			useUserStore().token || localStorage.getItem("uen-hiddenDangerManage-token")
 
 		//请求头添加token
 		xhr.setRequestHeader("Authorization", token)
