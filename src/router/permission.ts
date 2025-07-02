@@ -18,7 +18,13 @@ async function getRouterData(to: any, next: any, useMenu: any) {
 		// 登录默认跳转第一个菜单
 		if (to.path === "/" || to.path === "/home") {
 			const firstMenu = getFirstMenu(useMenu.syncMenuList)
-			next({ path: firstMenu.path, replace: true })
+			// 需要跳转的链接
+			if (firstMenu.link) {
+				next({ path: firstMenu.link, replace: true })
+			} else {
+				// 正常跳转菜单
+				next({ path: firstMenu.path, replace: true })
+			}
 		} else {
 			next({ ...to, replace: true })
 		}
