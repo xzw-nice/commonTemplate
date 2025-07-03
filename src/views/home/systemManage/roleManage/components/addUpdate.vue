@@ -17,6 +17,9 @@
 			<el-form-item label="角色名:" prop="name">
 				<el-input v-model="resource.name" />
 			</el-form-item>
+			<el-form-item class="btnItem" label="角色字符:">
+				<el-input v-model="resource.authStr" clearable />
+			</el-form-item>
 			<el-form-item class="btnItem" label="是否是默认角色:">
 				<el-switch
 					v-model="resource.isDefault"
