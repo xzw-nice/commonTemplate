@@ -10,6 +10,12 @@ const disableUser = (id) => get(`/sys/user/${id}`) // 禁用或启用用户
 
 const enableUser = (id) => get(`/sys/user/disable/${id}`) // 启用/禁用用户
 
+// 重置密码
+const resetCipher = (data) => get("/sys/user/restPassword", data)
+
+const userChangePassword = (data) => post("/sys/user/updatePassword", data) // 修改密码
+
+
 // const restUserRole = (data) => post("/sys/role/reset", data) // 重置用户角色关联
 
 export {
@@ -19,6 +25,8 @@ export {
 	addUser,
 	editUser,
 	disableUser,
-	enableUser
+	enableUser,
+	resetCipher,
+	userChangePassword
 	// restUserRole
 }
