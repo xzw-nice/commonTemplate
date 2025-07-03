@@ -340,7 +340,7 @@ export function reverseTreeQuery(
 				if (parentValue) {
 					finalValue = parentValue + "," + finalValue
 				}
-				break
+				return finalValue
 			} else if (current.children?.length) {
 				const currentValue: string = current[key] ? current[key] + "" : ""
 				const currentParent: string = parentValue
@@ -352,6 +352,10 @@ export function reverseTreeQuery(
 					key,
 					currentParent
 				)
+				// 若以有上级的值，则跳出循环
+				if (finalValue.includes(",")) {
+					break
+				}
 			}
 		}
 	}
