@@ -71,8 +71,8 @@ const emits = defineEmits(["restList"])
 const defaultResource = {
 	isDefault: true,
 	name: "",
-	status: 1
-	// authStr: ""
+	status: 1,
+	authStr: ""
 }
 const rules = {
 	name: [{ required: true, message: "必填", trigger: "blur" }]
