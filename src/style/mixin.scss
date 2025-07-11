@@ -1,0 +1,85 @@
+/*  超出文本省略号（元素不得是flex） */
+@mixin ellipsis($ellipsis-line: 1) {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: $ellipsis-line;
+	overflow: hidden;
+}
+
+/*  超出文本一行显示 */
+@mixin omit {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/** flex布局 */
+@mixin flex($justify-content: center, $align-items: center, $flex-flow: row) {
+	display: flex;
+	flex-flow: $flex-flow;
+	justify-content: $justify-content;
+	align-items: $align-items;
+}
+
+@mixin bg-image($url, $size: 100% 100%) {
+	background-image: url($url);
+	background-repeat: no-repeat;
+	background-size: $size;
+	background-position: center center;
+}
+
+@mixin button() {
+	cursor: pointer;
+	position: relative;
+	&:hover {
+		&::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			top: 0;
+			background: rgba(255, 255, 255, 0.1);
+		}
+	}
+}
+
+/**定位居中  */
+@mixin positionCenter {
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+/** 定位撑满 */
+@mixin positionFill {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+/** 字体渐变  */
+@mixin font-gradient(
+	$start-color: #ffffff,
+	$end-color: #0b5f9b,
+	$gradient-direction: 90deg
+) {
+	background: linear-gradient($gradient-direction, $start-color, $end-color);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-fill-color: transparent; // 兼容Safari
+}
+
+@function pxtorem($px) {
+	@return calc(#{$px} / 16 * 1rem);
+}
+
+@function vw($px, $width: 1920) {
+	@return calc(#{$px} / #{$width} * 100vw);
+}
+
+@function vh($px, $height: 1080) {
+	@return calc(#{$px} / #{$height} * 100vh);
+}
