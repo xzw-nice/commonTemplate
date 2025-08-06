@@ -3,7 +3,7 @@ import { get, post } from "@/utils/request.ts"
 /**
  * 登录
  * @param {{loginName:string,password:string}} data 登录账号/密码
- * @return {Method<any, any, unknown, unknown, any, any, any>}
+ * @return {Promise<unknown>}
  */
 const sysLogin = (data) => post("/sys/login", data)
 
