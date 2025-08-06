@@ -108,7 +108,8 @@ function login() {
 					// 获取用户信息
 					useUser.getUser().then(() => {
 						nextTick(() => {
-							router.replace("/")
+							const toPath = router.currentRoute.value.query.redirect
+							router.replace(toPath || "/")
 						})
 					})
 					// 获取字典数据
