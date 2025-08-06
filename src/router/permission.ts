@@ -93,7 +93,7 @@ router.beforeEach((to, from, next) => {
 		if (to.path === "/login") {
 			next()
 		} else {
-			next("/login")
+			next(`/login?redirect=${to.path}`)
 		}
 	} else if (to.path !== "/login") {
 		firstEnter(to, next).then()
